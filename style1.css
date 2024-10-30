@@ -1,0 +1,1372 @@
+body,html{
+    margin: 0;
+   background-color:rgb(34,36,47);
+    overflow-x: hidden;
+    overflow-y:auto;
+    min-height: 100vh; /* Asigură-te că este cel puțin înălțimea viewport-ului */
+}
+header{
+    width: 100%;
+    height: 120px;
+    background-color:rgb(34,36,47);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Efect de blur */
+    box-sizing: border-box; /* Asigurăm că padding-ul nu depășește dimensiunile header-ului */
+    transition: backdrop-filter 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Tranziție lină */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-decoration: none;   /* Elimină sublinierea */
+}
+header:active{
+  color: rgb(238, 180, 1); /* Păstrează aceeași culoare pentru link-urile vizitate */
+  text-decoration: none;   /* Continuă să elimini sublinierea, dacă este cazul */
+}
+header img{
+    max-width: 120px;
+    
+
+}
+header p:hover {
+    color: rgb(196,245,130);
+}
+header p{
+    font-family: 'Merriweather', serif;
+  font-weight: 300;
+    color: rgb(238,180,1);
+    margin: 0 15px; /* Spațiu între elementele text */
+    font-size: 15px; /* Ajustăm dimensiunea fontului */
+    text-decoration: none;   /* Elimină sublinierea */
+}
+a:active,a:link,a:visited{
+  color: rgb(238,180,1);
+  text-decoration: none;   /* Elimină sublinierea */
+}
+.menu{
+    display: flex;
+    justify-content:space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;   /* Elimină sublinierea */
+}
+.menu:visited {
+  color: rgb(238, 180, 1); /* Păstrează aceeași culoare pentru link-urile vizitate */
+  text-decoration: none;   /* Continuă să elimini sublinierea, dacă este cazul */
+}
+
+.menu p {
+    margin: 0;
+    padding: 0 10px; /* Micșorează padding-ul pentru a economisi spațiu */
+    font-size: 15px; /* Ajustează dimensiunea fontului pentru a încăpea toate elementele */
+    text-decoration: none;   /* Elimină sublinierea */
+}
+.sus{
+    position:relative;
+    min-height: 80vh; /* Înlocuiește height: 100vh cu min-height */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0;
+    text-align: center;
+    overflow: hidden; /* Asigură-te că containerul nu declanșează scroll */
+    
+}
+
+.sus img{
+    max-width: 500px;
+    border-radius: 30px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+mask-composite: intersect;  
+overflow: hidden; /* Dezactivează scroll-ul intern */
+pointer-events: none;
+
+
+}
+
+.sus_scris h1{
+
+    text-align: center;
+   font-size: 3.5em;
+   font-family: "Fleur De Leah",serif;
+   font-weight: 400;
+   background: #45443F;
+   background: linear-gradient(to bottom, #45443F 0%, #A4A4A4 38%, #FFFFFF 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+text-shadow: 3px 5px 2px rgb(139, 105, 0);
+margin: 0; /* Remove default margin */
+
+}
+#focus{
+  opacity: 0;
+}
+#focus.show{
+  animation: focus-in-expand 2s ease 0s 1 normal forwards;
+}
+#focus.hide{
+  animation: tracking-in-expand 2s ease  reverse forwards;
+}
+.focus-in-expand {
+	-webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.main-poza{
+    position: relative;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    filter: opacity(0.3);
+}
+.main-poza img{
+   max-width: 400px;
+   z-index: 1;
+   overflow-y: hidden;
+}
+.main{
+    z-index: 10;
+    margin: 10px; 
+    margin-top: 50px; /* Adjust top margin to reduce space */
+ overflow: hidden; /* Asigură-te că containerul nu declanșează scroll */
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+
+.main p{
+
+    margin-top: 50px;
+    color: rgb(255, 255, 255);
+   z-index: 10000;
+   font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  width: 80%;
+  text-align: center;
+  font-size: 20px;
+
+  text-shadow: 2px 2px 2px rgba(29, 71, 71, 0.5); /* Gri închis */
+
+    
+    
+}
+#dr{
+  opacity: 0;
+}
+#dr.show{
+  animation: slide-in-blurred-left 1s ease 0s 1 normal forwards;
+}
+
+.main img{
+  
+    width: 100%;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+mask-composite: intersect;  
+
+}
+#fade{
+  opacity: 0;
+}
+#fade.show{
+  animation: fade-in-fwd 3s ease 0s 1 normal forwards;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px); /* Ușoară deplasare în jos */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animația de apariție */
+
+/* Dimensiunea generală a caruselului */
+.slick-carousel {
+    max-width: 300px; /* Lățimea maximă a caruselului */
+    margin: 0 auto; /* Centrare pe pagină */
+    
+    margin-top: 100px;  
+   
+border-radius: 10px;
+    animation: float2 3s ease-in-out infinite; /* Infinite floating animation */
+}
+
+/* Controlul dimensiunii imaginilor din carusel */
+.slick-carousel img {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+mask-composite: intersect;  
+    width: 100%;  /* Imaginile vor ocupa întreaga lățime a containerului */
+    height: 500px; /* Înălțime fixă pentru imagini */
+    object-fit: cover; /* Asigură-te că imaginea acoperă tot containerul, fără să se deformeze */
+    border-radius: 15px; /* Opțional: colțuri rotunjite pentru imagini */
+    
+}
+
+.infoplus p{
+    color: white;
+    font-family: "Gruppo", sans-serif;
+    font-weight: 400;
+    width: 80%;
+    
+}
+.infoplus{
+   
+    display: flex;
+    text-align: center;
+    align-items:center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.servicii img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(albbambus.webp);
+    background-position: center;
+    background-size: cover;
+    mask-image: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0) 0%,        /* Transparent la început */
+        rgba(255, 255, 255, 0.1) 20%,     /* Subtil transparent */
+        rgba(255, 255, 255, 0.3) 40%,     /* Mai puțin transparent */
+        rgba(255, 255, 255, 0.6) 60%,     /* 60% opacitate */
+        rgba(255, 255, 255, 0.9) 80%,     /* Aproape complet opac */
+        rgba(255, 255, 255, 1) 100%       /* Complet opac */
+    ),
+    linear-gradient(to top, 
+        rgba(255, 255, 255, 0) 0%,        /* Transparent la partea de jos */
+        rgba(255, 255, 255, 0.1) 20%,     /* Subtil transparent */
+        rgba(255, 255, 255, 0.3) 40%,     /* Mai puțin transparent */
+        rgba(255, 255, 255, 0.6) 60%,     /* 60% opacitate */
+        rgba(255, 255, 255, 0.9) 80%,     /* Aproape complet opac */
+        rgba(255, 255, 255, 1) 100%       /* Complet opac */
+    );
+    mask-composite: intersect;
+    filter: blur(1px); /* Poți scoate blur-ul dacă vrei doar fade */
+   
+
+
+}
+.servicii{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+#servic{
+  opacity: 0;
+}
+#servic.show{
+  animation: fade-in-fwd 2s ease 0s 1 normal forwards;
+}
+.servicii #scrish{
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; /* Ajustează dimensiunea după preferințe */
+    font-weight: 400px;
+    text-align: center;
+  z-index: 1000;
+    margin: 0; /* Remove default margin */
+    background: #45443F;
+background: linear-gradient(to bottom, #5f5e5e 0%, #9b9a9a 38%, #FFFFFF 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 17px;
+animation: slide-in-blurred-tr 1s ease 0s 1 normal forwards;
+}
+
+.casute{
+    width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  justify-content: center;
+align-items: center;
+
+}
+.serv{
+
+   justify-content: center;
+   align-items: center;
+    z-index: 10000;
+    width: 95vw;
+   height: 120px;
+   text-align: center;
+
+background: rgba(255, 255, 255, 0.11);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(6px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
+
+   
+}
+.serv p{
+    text-align: center;
+    font-family: "Gruppo", sans-serif;
+    font-size: 20px; /* Ajustează dimensiunea după preferințe */
+  font-weight: bolder;
+    color: white;
+}
+.serv h1{
+    font-family: "Gruppo", sans-serif;
+    font-size: 25px; /* Ajustează dimensiunea după preferințe */
+    font-weight: 100px;
+    text-align: center;
+  z-index: 1000;
+    margin: 0; /* Remove default margin */
+   
+
+}
+#s1 h1,#s2 h1,#s3 h1{
+   color: white;
+    
+
+}
+#s1,#s2,#s3,#s4{
+  opacity: 0;
+}
+#s1.show{
+  animation: slide-in-blurred-top 2s ease 0s 1 normal forwards;
+  
+}
+#s2.show{
+
+  animation: slide-in-blurred-left 2s ease 0s 1 normal forwards;
+}
+#s3.show{
+  animation: slide-in-blurred-bottom 2s ease 0s 1 normal forwards;
+}
+#s4.show{
+  animation: slide-in-blurred-bottom 2s ease 0s 1 normal forwards;
+}
+.toate{
+ 
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; /* Ajustează dimensiunea după preferințe */
+    font-weight: 400px;
+    text-align: center;
+  z-index: 1000;
+margin-bottom: 17px;
+}
+button{
+  
+  font-family: 'Playfair Display', serif;
+  background-color:transparent; /* Calming medical green */
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border:#eeb300;
+  border-style:solid;
+  border-radius: 30px; /* Rounded edges for a friendly look */
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7); /* Soft shadow */
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+    animation: float 3s ease-in-out infinite; /* Infinite floating animation */
+}
+
+
+
+.om{
+ 
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   position: relative;
+   margin-top:150px;
+   margin-bottom: 100px;
+}
+.om img{
+  position: relative;
+z-index: 10000;
+    max-width:400px;
+    mask-image: linear-gradient(to top, 
+    rgba(255, 255, 255, 0) 0%,        /* Transparent la partea de jos */
+    rgba(255, 255, 255, 0.1) 5%,      /* Subtil transparent la 5% */
+    rgba(255, 255, 255, 0.3) 10%,     /* Mai puțin transparent la 10% */
+    rgba(255, 255, 255, 0.6) 20%,     /* 60% opacitate la 20% */
+    rgba(255, 255, 255, 0.9) 30%,     /* Aproape complet opac la 30% */
+    rgba(255, 255, 255, 1) 40%        /* Complet opac la 40% */
+);
+filter:drop-shadow(10px 10px 15px rgb(0, 0, 0));
+}
+#spate{
+  position: absolute;
+  max-width: 800px;
+  margin-bottom: 500px;
+  opacity: 0;
+  z-index: 0;
+
+}
+#spate.show{
+  animation: slide-in-blurred-left 1.5s ease 0s 1 normal forwards;
+}
+
+#swing{
+  opacity: 0;
+}
+#swing.show{
+  animation: swing-in-bottom-fwd 2s ease 0s 1 normal forwards;
+}
+#st{
+  opacity: 0;
+
+}
+#st.show{
+  animation: slide-in-blurred-bottom 2s ease 0s 1 normal forwards;
+}
+
+.om p{
+    color: white;
+    font-family: "Gruppo", sans-serif;
+    font-weight: 400;
+   
+    width: 90%;
+    text-align: center;
+    
+
+}
+.om2{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    overflow-x: hidden;
+}
+#steag{
+  
+    overflow-x: hidden;
+  z-index: 1;
+width: 100%;
+height: 60%;
+  position: absolute;
+  filter: opacity(20%);
+  mask-image: linear-gradient(to bottom, 
+  rgba(255, 255, 255, 0) 0%,        /* Transparent la început */
+  rgba(255, 255, 255, 0.1) 20%,     /* Subtil transparent */
+  rgba(255, 255, 255, 0.3) 40%,     /* Mai puțin transparent */
+  rgba(255, 255, 255, 0.6) 60%,     /* 60% opacitate */
+  rgba(255, 255, 255, 0.9) 80%,     /* Aproape complet opac */
+  rgba(255, 255, 255, 1) 100%       /* Complet opac */
+),
+linear-gradient(to top, 
+  rgba(255, 255, 255, 0) 0%,        /* Transparent la partea de jos */
+  rgba(255, 255, 255, 0.1) 20%,     /* Subtil transparent */
+  rgba(255, 255, 255, 0.3) 40%,     /* Mai puțin transparent */
+  rgba(255, 255, 255, 0.6) 60%,     /* 60% opacitate */
+  rgba(255, 255, 255, 0.9) 80%,     /* Aproape complet opac */
+  rgba(255, 255, 255, 1) 100%       /* Complet opac */
+);
+mask-composite: intersect;
+filter: blur(2px); /*Poți scoate blur-ul dacă vrei doar fade */
+
+}
+#steag{
+  opacity: 0;
+}
+#steag.show{
+  animation: slide-in-blurred-top 1.6s ease 0s 1 normal forwards;
+}
+#dita{
+  
+
+  z-index: 10000;
+    max-width: 400px;
+    mask-image: linear-gradient(to top, 
+    rgba(255, 255, 255, 0) 0%,        /* Transparent la partea de jos */
+    rgba(255, 255, 255, 0.1) 5%,      /* Subtil transparent la 5% */
+    rgba(255, 255, 255, 0.3) 10%,     /* Mai puțin transparent la 10% */
+    rgba(255, 255, 255, 0.6) 20%,     /* 60% opacitate la 20% */
+    rgba(255, 255, 255, 0.9) 30%,     /* Aproape complet opac la 30% */
+    rgba(255, 255, 255, 1) 40%        /* Complet opac la 40% */
+);
+filter:drop-shadow(20px 10px 10px rgb(0, 0, 0,0.5));
+
+}
+#dita{
+  opacity: 0;
+}
+#dita.show{
+  animation: slide-in-blurred-left 2s ease 0s 1 normal forwards;
+}
+.om2 h1{
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-family: "Gruppo", sans-serif;
+    font-weight: 400;
+}
+.om2 #typed-text{
+  color: rgb(156, 208, 226);
+}
+.info2{
+  animation: slide-in-blurred-left 1s ease 0s 1 normal forwards;
+    margin-top: 50px;
+    
+    color: #458ac7;
+   z-index: 10000;
+   font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+
+  text-shadow: 2px 2px 2px rgba(29, 71, 71, 0.5); /* Gri închis */
+
+}
+.hidden {
+  opacity: 0;
+  transform: translateY(30px); /* O mică deplasare pentru efect */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+ opacity: 1;
+}
+/* Elemente animate inițial */
+#animate {
+  opacity: 0; /* Ascuns inițial */
+}
+.hide {
+  opacity: 0; /* Elementele devin invizibile */
+  transform: translateY(-20px); /* Efect de urcare */
+}
+
+.scrisultim{
+  z-index: 0;
+  display: flex;
+flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#statuie{
+ z-index: 0;
+  z-index: 10000;
+  max-width: 550px;
+  animation: float2 2s ease-in-out infinite;
+}
+#umbra{
+  position: relative;
+  margin-top: -5vh;
+  z-index: 10000;
+  max-width: 400px;
+
+}
+
+
+
+/* Footer styles */
+footer {
+  background-color: rgb(34, 36, 47); /* Dark background matching the site */
+  padding: 40px 0;
+  color: white;
+  font-family: 'Gruppo', sans-serif;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for separation */
+}
+
+/* Flexbox layout to center the content */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between elements */
+}
+
+/* Styling the footer menu */
+.footer-menu {
+  list-style-type: none; /* Remove default list bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Spacing between links */
+}
+
+/* Footer menu links */
+.footer-menu li {
+  font-family: 'Gruppo', sans-serif; /* Keep the same font */
+  font-size: 18px;
+}
+
+/* Footer menu link styles */
+.footer-menu a {
+  color: rgb(191, 205, 214); /* Soft white color for links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Footer menu link hover effect */
+.footer-menu a:hover {
+  color: rgb(196, 245, 130); /* Bright color on hover */
+}
+
+/* Copyright text style */
+footer p {
+  font-size: 14px;
+  color: rgb(191, 205, 214); /* Same soft white as the links */
+  margin-top: 20px;
+}
+.nor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: -100%; /* Pornește din afara ecranului */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgb(34,36,47);
+  transition: transform 1s ease;
+  z-index: 10000;
+}
+.logo2 img{
+  max-width: 700px;
+  filter: drop-shadow(0 0 0.75rem rgb(120, 120, 120));
+}
+.nor.show {
+  transform: translateY(-100%); /* Ridică norul până acoperă ecranul */
+}
+
+.nor.hide {
+  transform: translateY(100%); /* Coboară norul pentru a dezvălui pagina */
+}
+
+
+
+
+
+
+@media (min-width: 1200px){
+ header img{
+  max-width: 200px;
+ }
+ header{
+   justify-content: center;
+   gap: 80vh;
+   
+ }
+ header p{
+  
+  font-weight: 100px;
+ }
+ .menu p{
+  font-size: 20px;
+ }
+
+ .sus{
+  width: 100%;
+
+ }
+ .sus img{
+  max-width: 700px;
+ }
+.sus_scris{
+  font-size: 30px;
+}
+
+
+ .main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  
+ }
+ .main p{
+   font-size: 30px;
+  width: 70%;
+  text-align: center;
+  margin-left: 0px;
+ }
+ .main img{
+ max-width: 80vh;
+ }
+ .om{
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+ 
+ }
+ .om img{
+  max-width: 600px;
+  
+ }
+ .om p{
+  font-size: 25px;
+  width: 70%;
+  text-align: center;
+  font-weight: 400;
+  margin-left: 0px;
+ }
+
+.infoplus p{
+  font-size: 20px;
+  width: 60%;
+  font-weight: 400;
+  text-align: center;
+  margin-left: 0px;
+}
+.om2 h1{
+   font-size: 40px;
+}
+#dita{
+  max-width: 600px;
+}
+#steag{
+  height: 100%;
+}
+.servicii{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.servicii img{
+  position: absolute;
+   max-width: 700px;
+   mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%),
+   linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+   mask-composite: intersect; /* Asigură combinația între fade și imagine */
+ 
+}
+.serv{
+  max-width: 500px;
+ 
+}
+#s1 h1,#s2 h1,#s3 h1{
+  color: rgb(0, 0, 0);
+   
+
+}
+.casute{
+  max-width: 400px;
+}
+.casute p{
+  color: black;
+}
+
+
+}
+@media (min-width: 400px){
+  .om img{
+    max-width:500px;
+  }
+  
+}
+@media only screen and (min-width: 421px) {
+  /* Stiluri pentru ecrane medii și mari */
+  .sus img {
+      max-width: 700px; /* Poți crește mărimea imaginilor pentru ecrane mai mari */
+  }
+  
+  .main p {
+      font-size: 24px; /* Textul poate fi mai mare pe ecrane mai mari */
+  }
+  
+  .servicii {
+      flex-direction: column; /* Elemente aranjate pe orizontală pentru spațiu mai mare */
+  }
+
+  /* Orice alte ajustări pentru elementele care arată bine la 420px, dar necesită scalare pentru ecrane mari */
+}
+
+@media (max-width: 300px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-in-blurred-br {
+  0% {
+    -webkit-transform: translate(1000px, 1000px) skew(80deg, 10deg);
+            transform: translate(1000px, 1000px) skew(80deg, 10deg);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0) skew(0deg, 0deg);
+            transform: translate(0, 0) skew(0deg, 0deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes shadow-drop-2-center {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-transform: translateZ(50px);
+              transform: translateZ(50px);
+      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+  @keyframes shadow-drop-2-center {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-transform: translateZ(50px);
+              transform: translateZ(50px);
+      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+@keyframes myAnim {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes float2 {
+  0%, 100% {
+      transform: translateY(0); /* Start and end position */
+  }
+  50% {
+      transform: translateY(-12px); /* Float up by 10px at mid-point */
+  }
+}
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0); /* Start and end position */
+  }
+  50% {
+      transform: translateY(-8px); /* Float up by 10px at mid-point */
+  }
+}
+@keyframes myAnim2 {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
+}
+@-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes roll-in-blurred-top {
+    0% {
+      -webkit-transform: translateY(-800px) rotate(-720deg);
+              transform: translateY(-800px) rotate(-720deg);
+      -webkit-filter: blur(50px);
+              filter: blur(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(0deg);
+              transform: translateY(0) rotate(0deg);
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @keyframes roll-in-blurred-top {
+    0% {
+      -webkit-transform: translateY(-800px) rotate(-720deg);
+              transform: translateY(-800px) rotate(-720deg);
+      -webkit-filter: blur(50px);
+              filter: blur(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(0deg);
+              transform: translateY(0) rotate(0deg);
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes shake-bottom {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    10% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-4deg);
+              transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(4deg);
+              transform: rotate(4deg);
+    }
+    80% {
+      -webkit-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+    }
+    90% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+  }
+  @keyframes shake-bottom {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    10% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-4deg);
+              transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(4deg);
+              transform: rotate(4deg);
+    }
+    80% {
+      -webkit-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+    }
+    90% {
+      -webkit-transform: rotate(2deg);
+              transform: rotate(2deg);
+    }
+  }
+  @-webkit-keyframes slide-in-blurred-tr {
+    0% {
+      -webkit-transform: translate(1000px, -1000px) skew(-80deg, -10deg);
+              transform: translate(1000px, -1000px) skew(-80deg, -10deg);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translate(0, 0) skew(0deg, 0deg);
+              transform: translate(0, 0) skew(0deg, 0deg);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-blurred-tr {
+    0% {
+      -webkit-transform: translate(1000px, -1000px) skew(-80deg, -10deg);
+              transform: translate(1000px, -1000px) skew(-80deg, -10deg);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translate(0, 0) skew(0deg, 0deg);
+              transform: translate(0, 0) skew(0deg, 0deg);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes slide-in-blurred-left {
+    0% {
+      -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+              transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+      -webkit-transform-origin: 100% 50%;
+              transform-origin: 100% 50%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+              transform: translateX(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-blurred-left {
+    0% {
+      -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+              transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+      -webkit-transform-origin: 100% 50%;
+              transform-origin: 100% 50%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+              transform: translateX(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes slide-in-blurred-top {
+    0% {
+      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-blurred-top {
+    0% {
+      -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes slide-in-blurred-bottom {
+    0% {
+      -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-blurred-bottom {
+    0% {
+      -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+              transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+      -webkit-filter: blur(40px);
+              filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+              transform: translateY(0) scaleY(1) scaleX(1);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes swing-in-bottom-fwd {
+    0% {
+      -webkit-transform: rotateX(100deg);
+              transform: rotateX(100deg);
+      -webkit-transform-origin: bottom;
+              transform-origin: bottom;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      -webkit-transform-origin: bottom;
+              transform-origin: bottom;
+      opacity: 1;
+    }
+  }
+  @keyframes swing-in-bottom-fwd {
+    0% {
+      -webkit-transform: rotateX(100deg);
+              transform: rotateX(100deg);
+      -webkit-transform-origin: bottom;
+              transform-origin: bottom;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      -webkit-transform-origin: bottom;
+              transform-origin: bottom;
+      opacity: 1;
+    }
+  }
+  
+        
