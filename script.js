@@ -39,6 +39,11 @@ document.querySelectorAll('.menu a[href="servicii.html"], .menu a[href="contact.
             window.location.href = destination;
             nor.classList.remove('show');
         }, 1000); // Timpul animatiei
+         setTimeout(() => {
+            
+            nor.classList.remove('show');
+           
+        }, 500); // Timpul animatiei
     });
 });
 
