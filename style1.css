@@ -792,9 +792,47 @@ footer p {
   /* Orice alte ajustări pentru elementele care arată bine la 420px, dar necesită scalare pentru ecrane mari */
 }
 
-@media (max-width: 300px){
+@media (max-width: 410px){
+.sus img{
+  max-width: 600px;
+}
+.main-poza img{
+  max-width: 300px;
+  
+}
+#spate{
+  max-width: 780px;
+ 
 
 }
+#steag{
+  height: 55%;
+}
+#statuie{
+  animation: float2 2s ease-in-out infinite;
+}
+}
+@media (max-width: 377px){
+  .sus img{
+    max-width: 500px;
+  }
+  .main-poza img{
+    max-width: 300px;
+    
+  }
+  #spate{
+    max-width: 720px;
+   
+  
+  }
+  #steag{
+    height: 55%;
+  }
+  #statuie{
+    animation: float2 2s ease-in-out infinite;
+  }
+  }
+
 
 
 
