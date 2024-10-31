@@ -43,7 +43,7 @@ document.querySelectorAll('.menu a[href="servicii.html"], .menu a[href="contact.
             
             nor.classList.remove('show');
            
-        }, 500); // Timpul animatiei
+        }, 2000); // Timpul animatiei
     });
 });
 
