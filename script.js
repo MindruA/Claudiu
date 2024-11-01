@@ -25,25 +25,23 @@ window.addEventListener('scroll', handleScrollAnimations);
 // Ensure it's called on page load to check elements already in viewport
 window.addEventListener('load', handleScrollAnimations);
 
-
-document.querySelectorAll('.menu a[href="servicii.html"], .menu a[href="contact.html"],#so,.toate a[href="servicii.html"],#con').forEach(link => {
+// Selector for the links that need animated transitions
+document.querySelectorAll('.menu a[href="servicii.html"], .menu a[href="contact.html"], #so, .toate a[href="servicii.html"], #con').forEach(link => {
     link.addEventListener('click', function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent default navigation
         const nor = document.querySelector('.nor');
-        nor.classList.add('show');
-        
-        // Salvăm URL-ul către care să redirecționăm
-        const destination = this.getAttribute('href');
-        
+        nor.classList.add('show'); // Start animation
+
+        const destination = this.getAttribute('href'); // Get the destination
+
+        // Delay navigation to allow the animation to complete
         setTimeout(() => {
             window.location.href = destination;
+        }, 1000); // Adjust if you want to delay more
+
+        // Wait for the new page load to clear the animation
+        window.addEventListener('pageshow', () => {
             nor.classList.remove('show');
-        }, 1000); // Timpul animatiei
-         setTimeout(() => {
-            
-            nor.classList.remove('show');
-           
-        }, 2000); // Timpul animatiei
+        });
     });
 });
-
